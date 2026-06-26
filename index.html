@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friseur Terminbuchung</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <div class="brand">Salon Nova</div>
+      <a href="#booking" class="nav-button">Termin buchen</a>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Einfach. Schnell. Verbindlich.</p>
+      <h1>Buche deinen Friseurtermin online</h1>
+      <p class="hero-text">
+        Wähle ein Datum, einen freien Zeitslot und trage dich selbstständig ein.
+        Termine sind täglich von 09:00 bis 18:00 Uhr im 30-Minuten-Takt möglich.
+      </p>
+      <a href="#booking" class="primary-button">Jetzt Termin auswählen</a>
+    </section>
+  </header>
+
+  <main>
+    <section class="info-grid">
+      <article class="info-card">
+        <span>⏱</span>
+        <h3>30-Minuten-Slots</h3>
+        <p>Alle Termine laufen im festen Intervall, damit keine Überschneidungen entstehen.</p>
+      </article>
+      <article class="info-card">
+        <span>📅</span>
+        <h3>Übersichtlich</h3>
+        <p>Freie und belegte Zeiten sind sofort sichtbar.</p>
+      </article>
+      <article class="info-card">
+        <span>🔒</span>
+        <h3>Später mit Admin</h3>
+        <p>Für echte Manipulationssicherheit sollte später ein Backend ergänzt werden.</p>
+      </article>
+    </section>
+
+    <section id="booking" class="booking-section">
+      <div class="booking-header">
+        <div>
+          <p class="eyebrow">Terminverwaltung</p>
+          <h2>Freien Termin auswählen</h2>
+        </div>
+        <div class="date-box">
+          <label for="datePicker">Datum</label>
+          <input id="datePicker" type="date" />
+        </div>
+      </div>
+
+      <div class="content-layout">
+        <section class="slots-card">
+          <h3>Verfügbare Uhrzeiten</h3>
+          <div id="slots" class="slots"></div>
+        </section>
+
+        <aside class="form-card">
+          <h3>Deine Daten</h3>
+          <p id="selectedSlotText" class="selected-slot">Bitte zuerst eine Uhrzeit auswählen.</p>
+
+          <form id="bookingForm">
+            <label for="name">Name *</label>
+            <input id="name" type="text" placeholder="Max Mustermann" required />
+
+            <label for="phone">Telefonnummer *</label>
+            <input id="phone" type="tel" placeholder="0176 12345678" required />
+
+            <label for="service">Leistung</label>
+            <select id="service">
+              <option value="Haarschnitt">Haarschnitt</option>
+              <option value="Bart">Bart</option>
+              <option value="Haarschnitt + Bart">Haarschnitt + Bart</option>
+              <option value="Färben">Färben</option>
+            </select>
+
+            <label for="note">Hinweis</label>
+            <textarea id="note" rows="3" placeholder="Optional, z. B. Wunsch, Verspätung, Besonderheit"></textarea>
+
+            <button type="submit" class="primary-button full">Termin eintragen</button>
+          </form>
+
+          <p id="message" class="message"></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="admin-preview">
+      <h2>Aktuelle Termine dieses Tages</h2>
+      <p>Diese Ansicht ist aktuell nur eine Demo. Später sollte sie nur für Admins sichtbar sein.</p>
+      <div id="appointmentsList" class="appointments-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Salon Nova · Terminbuchung Demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
